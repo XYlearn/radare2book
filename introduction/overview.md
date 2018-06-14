@@ -63,7 +63,7 @@ file: 0x00000000-0x00000007 md5: d1833805515fc34b46c2b9de553f599d
 
 A binary diffing utility that implements multiple algorithms. It supports byte-level or delta diffing for binary files, and code-analysis diffing to find changes in basic code blocks obtained from the radare code analysis, or from the IDA analysis using the rsc idc2rdb  script.
 
-一个实现了多种算法的文件比较工具。它支持对二进制文件的字节级或增量对比。也支持对代码进行对比找到基本代码块的改变。基本代码块可通过radare code analysis获取或使用rsc idc2rdb脚本从IDA analysis获取。
+一个实现了多种算法的文件比较工具。它支持对二进制文件的字节级或增量对比。也支持对代码进行对比找到基本代码块的改变。基本代码块可从radare code analysis获取或使用rsc idc2rdb脚本从IDA analysis获取。
 
 ### rafind2
 
@@ -74,6 +74,8 @@ A program to find byte patterns in files.
 ### ragg2
 
 A frontend for r\_egg. ragg2 compiles programs written in a simple high-level language into tiny binaries for x86, x86-64, and ARM.
+
+一个r\_egg的前段，用于将用简单高级语言编写的代码编译成小型二进制程序。支持x86, x86-64和ARM。
 
 #### Examples
 
