@@ -18,9 +18,13 @@ It implements an advanced command line interface for moving around a file, analy
 
 A program to extract information from executable binaries, such as ELF, PE, Java CLASS, and Mach-O. rabin2 is used by the core to get exported symbols, imports, file information, cross references \(xrefs\), library dependencies, sections, etc.
 
+一个从可执行二进制文件中提取信息的程序，可以解析如ELF，PE，Java class文件和Mach-O文件。rabin2被radare2内核用于获取导入导出符号、文件信息、交叉引用、库依赖、节信息等。
+
 ### rasm2
 
 A command line assembler and disassembler for multiple architectures \(including Intel x86 and x86-64, MIPS, ARM, PowerPC and Java\).
+
+
 
 #### Examples
 
