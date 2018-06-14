@@ -2,9 +2,13 @@
 
 The Radare2 project is a set of small command-line utilities that can be used together or independently.
 
+Radare2项目由一系列小的命令行工具组成，他们可以被一起使用也可以独立使用。
+
 ### radare2
 
 The core of the hexadecimal editor and debugger. radare2 allows you to open a number of input/output sources as if they were simple, plain files, including disks, network connections, kernel drivers, processes under debugging, and so on.
+
+是十六进制编辑器和调试器的核心。radare2允许你像打开简单普通文件那样打开大量输入/输出文件，如磁盘、网络连接、内核驱动、调试中的进程等。
 
 It implements an advanced command line interface for moving around a file, analyzing data, disassembling, binary patching, data comparison, searching, replacing, visualizing. It can be scripted with a variety of languages, including Ruby, Python, Lua, and Perl.
 
