@@ -112,6 +112,12 @@ A launcher for running programs within different environments, with different ar
 * Fuzzing
 * Test suites
 
+一个用于在不同环境，不同参数，权限，目录和重定向文件描述符条件下运行程序的程序运行器。rarun2可以用于：
+
+* 破解
+* 模糊测试
+* 测试
+
 #### Sample rarun2 script
 
 ```
