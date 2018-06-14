@@ -92,11 +92,17 @@ By default it will be installed in /usr, but you can define a new prefix as argu
 
 This is useful for developers, because it permits them to just run 'make' and try changes without having to run make install again.
 
-### Cleaning Up
+这对开发者很有帮助，因为这可以让他们通过运行make并且测试更改而不用重新运行make install。
+
+### 清理
 
 Cleaning up the source tree is important to avoid problems like linking to old objects files or not updating objects after an ABI change.
 
+清理源代码目录树对避免诸如链接到旧的object文件或ABI改变后object文件等不到更新等问题十分重要。
+
 The following commands may help you to get your git clone up to date:
+
+下面的命令能帮助你让你的git clone仓库更至最新：
 
 ```
 $ git clean -xdf
@@ -105,6 +111,8 @@ $ git pull
 ```
 
 If you want to remove previous installations from your system, you must run the following commands:
+
+如果你想要从你的系统中移除之前的安装，你需要运行以下的命令：
 
 ```
 $ ./configure --prefix=/usr/local
