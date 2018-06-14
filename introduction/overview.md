@@ -118,7 +118,7 @@ A launcher for running programs within different environments, with different ar
 * 模糊测试
 * 测试
 
-#### Sample rarun2 script
+#### rarun2脚本示例
 
 ```
    $ cat foo.rr2
