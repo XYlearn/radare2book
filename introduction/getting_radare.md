@@ -26,7 +26,7 @@ This will probably take a while, so take a coffee break and continue reading thi
 
 To update your local copy of the repository, use `git pull` anywhere in the radare2 source code tree:
 
-在radare2的源代码目录树下使用\`git pull\` 更新本地仓库
+在radare2的源代码目录树下的任意一处使用\`git pull\` 更新本地仓库
 
 ```
 $ git pull
@@ -34,11 +34,15 @@ $ git pull
 
 If you have local modifications of the source, you can revert them \(and lose them!\) with:
 
+如果你修改了本地源代码，你可以回退（并删除更改）：
+
 ```
 $ git reset --hard HEAD
 ```
 
 Or send me a patch:
+
+或给我发送一个补丁：
 
 ```
 $ git diff > radare-foo.patch
@@ -46,15 +50,21 @@ $ git diff > radare-foo.patch
 
 The most common way to get r2 updated and installed system wide is by using:
 
+最普通的更新并在整个系统上安装r2的方法为：
+
 ```
 $ sys/install.sh
 ```
 
-### Build with meson + ninja
+### 用meson + ninja构建
 
 There is also a work-in-progress support for Meson.
 
+目前也有对Meson的支持
+
 Using clang and ld.gold makes the build faster:
+
+使用clang和ld.gold使构建更迅速：
 
 ```bash
 CC=clang LDFLAGS=-fuse-ld=gold meson . release --buildtype=release --prefix ~/.local/stow/radare2/release
@@ -62,15 +72,23 @@ ninja -C release
 # ninja -C release install
 ```
 
-### Helper Scripts
+### 帮助脚本
 
 Take a look at the `sys/*` scripts, those are used to automate stuff related to syncing, building and installing r2 and its bindings.
 
+看一看`sys/*`的脚本，这些是用于自动化同步、构建和安装r2和它的其他文件的
+
 The most important one is `sys/install.sh`. It will pull, clean, build and symstall r2 system wide.
+
+最重要的一个脚本是`sys/install.sh`。它会拉取，清空，构建并在系统上安装\(symstall\)r2。
 
 Symstalling is the process of installing all the programs, libraries, documentation and data files using symlinks instead of copying the files.
 
+Symstall使用符号链接而不是文件拷贝来安装所有程序，库，文档和数据文件。
+
 By default it will be installed in /usr, but you can define a new prefix as argument.
+
+默认情况下程序会被安装在/usr。但是你可以通过参数自定义前缀。
 
 This is useful for developers, because it permits them to just run 'make' and try changes without having to run make install again.
 
