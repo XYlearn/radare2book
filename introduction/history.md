@@ -6,6 +6,8 @@ radare项目开始于2006年的2月，意在提供一个免费且简单的支持
 
 Since then, the project has evolved to provide a complete framework for analyzing binaries while making use of basic \*NIX concepts. Those concepts include the famous "everything is a file," "small programs that interact using stdin/stdout," and "keep it simple" paradigms.
 
+从那以后，
+
 It is mostly a single-person project. However, ideas and source code contributions are greatly appreciated.
 
 The central focus of this project is the hexadecimal editor. Additionally, this project contains an assembler/disassembler, code/data analysis and graphing tools, scripting features, easy Unix integration, and more.
