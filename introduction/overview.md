@@ -12,7 +12,7 @@ The core of the hexadecimal editor and debugger. radare2 allows you to open a nu
 
 It implements an advanced command line interface for moving around a file, analyzing data, disassembling, binary patching, data comparison, searching, replacing, visualizing. It can be scripted with a variety of languages, including Ruby, Python, Lua, and Perl.
 
-它实现了一个高级的命令行借口，可以浏览文件、分析数据、反汇编、打二进制补丁、做数据比较、搜索、替换、可视化。它提供了不同语言脚本功能，包括Ruby，Python，Lua和Perl
+它实现了一个高级的命令行借口，可以浏览文件、分析数据、反汇编、打二进制补丁、做数据比较、搜索、替换、可视化。它提供了不同语言脚本功能，包括Ruby，Python，Lua和Perl。
 
 ### rabin2
 
