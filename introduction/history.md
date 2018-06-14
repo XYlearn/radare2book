@@ -10,7 +10,9 @@ Since then, the project has evolved to provide a complete framework for analyzin
 
 It is mostly a single-person project. However, ideas and source code contributions are greatly appreciated.
 
-
+这基本上是一个个人项目。但是，非常感谢想法和源代码贡献。
 
 The central focus of this project is the hexadecimal editor. Additionally, this project contains an assembler/disassembler, code/data analysis and graphing tools, scripting features, easy Unix integration, and more.
+
+项目的中心是十六进制编辑器。此外，这个项目包含了一个汇编器/反汇编器、代码/数据分析工具、绘图工具、脚本特性、简单的Unix集成和其他东西。
 
