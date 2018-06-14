@@ -159,15 +159,17 @@ program=/bin/ls
 stdio=/dev/ttys010
 ```
 
-3 - Launch the following radare2 command: r2 -R foo.rr2 -d /bin/ls
+3 - Launch the following radare2 command: r2 -r foo.rr2 -d /bin/ls
 
-3 - 运行radare2命令：r2 -R foo.rr2 -d /bin/ls
+3 - 运行radare2命令：r2 -r foo.rr2 -d /bin/ls
 
 ### rax2
 
 A minimalistic mathematical expression evaluator for the shell that is useful for making base conversions between floating point values, hexadecimal representations, hexpair strings to ASCII, octal to integer, etc. It also supports endianness settings and can be used as an interactive shell if no arguments are given.
 
-#### Examples
+一个简约的命令行数学表达式运算器，用于转换浮点数和十六进制数、转换ascii字符串和十六进制字符串，八进制转十进制等等。它还提供了端序设置。如果不提供参数则提供一个交互式终端。
+
+#### 例子
 
 ```
 $ rax2 1337
