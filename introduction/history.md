@@ -2,7 +2,7 @@
 
 The radare project began in February of 2006 to provide a free and simple command-line hexadecimal editor with support for 64-bit offsets. The intention was to use the tool to perform searches and help recover data from hard-disks.
 
-radare项目开始于2006年的2月，意在提供一个免费且简单的支持64位偏移的十六进制进制编辑器。
+radare项目开始于2006年的2月，意在提供一个免费且简单的支持64位偏移的十六进制进制编辑器。目的是为了使用这个工具执行搜索功能并且帮助从硬盘中恢复数据
 
 Since then, the project has evolved to provide a complete framework for analyzing binaries while making use of basic \*NIX concepts. Those concepts include the famous "everything is a file," "small programs that interact using stdin/stdout," and "keep it simple" paradigms.
 
