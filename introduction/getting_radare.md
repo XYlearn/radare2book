@@ -6,9 +6,15 @@ You can get radare from the website, [http://radare.org/](http://radare.org/), o
 
 Binary packages are available for a number of operating systems \(Ubuntu, Maemo, Gentoo, Windows, iPhone, and so on\). Yet, you are highly encouraged to get the source and compile it yourself to better understand the dependencies, to make examples more accessible and of course to have the most recent version.
 
+你可以获取支持不同操作系统的二进制程序包。但是，我们建议你下载源代码，并亲自编译它们以对依赖有一个更好的了解，更容易获取样例并且，当然，获得最新的版本。
+
 A new stable release is typically published every month. Nightly tarballs are sometimes available at [http://bin.rada.re/](http://bin.rada.re/).
 
+新的稳定版本通常在每一个月发布。有些晚上发布的tar包可以从 [http://bin.rada.re/](http://bin.rada.re/) 获取。
+
 The radare development repository is often more stable than the 'stable' releases. To obtain the latest version:
+
+radare的开发仓库通常比“稳定”发行版更加稳定。如下命令获取最新版本
 
 ```
 $ git clone https://github.com/radare/radare2.git
@@ -16,7 +22,11 @@ $ git clone https://github.com/radare/radare2.git
 
 This will probably take a while, so take a coffee break and continue reading this book.
 
+这很可能会花费一段时间。所以请喝杯咖啡继续阅读这本书。
+
 To update your local copy of the repository, use `git pull` anywhere in the radare2 source code tree:
+
+在radare2的源代码目录树下使用\`git pull\` 更新本地仓库
 
 ```
 $ git pull
