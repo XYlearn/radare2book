@@ -1,28 +1,36 @@
-## Compilation and Portability
+## 编译和移植
 
-Currently the core of radare2 can be compiled on many systems and architectures, but the main development is done on GNU/Linux with GCC, and on MacOS X with clang. Radare is also known to compile on many different systems and architectures (including TCC and SunStudio).
+Currently the core of radare2 can be compiled on many systems and architectures, but the main development is done on GNU/Linux with GCC, and on MacOS X with clang. Radare is also known to compile on many different systems and architectures \(including TCC and SunStudio\).
 
-People often want to use radare as a debugger for reverse engineering. Currently, the debugger layer can be used on Windows, GNU/Linux (Intel x86 and x86_64, MIPS, and ARM), FreeBSD, NetBSD, and OpenBSD (Intel x86 and x86_64). There are plans to support Solaris and MacOS X.
+目前来说radare2的内核可以在很多系统和架构上编译，但是主要的开发工作在GNU/Linux用GCC，和在MacOS X上用clang完成。众所周知，Radare也可以在很多其他系统和架构上编译（包括 TCC和SunStudio）。
+
+People often want to use radare as a debugger for reverse engineering. Currently, the debugger layer can be used on Windows, GNU/Linux \(Intel x86 and x86\_64, MIPS, and ARM\), FreeBSD, NetBSD, and OpenBSD \(Intel x86 and x86\_64\). There are plans to support Solaris and MacOS X.
 
 Compared to core, the debugger feature is more restrictive portability-wise. If the debugger has not been ported to your favorite platform, you can disable the debugger layer with the --without-debugger `configure` script option when compiling radare2.
 
 Note that there are I/O plugins that use GDB, GDB Remote, or Wine as back-ends, and therefore rely on presence of corresponding third-party tools.
 
-To build on a system using ACR/GMAKE (e.g. on *BSD systems):
+To build on a system using ACR/GMAKE \(e.g. on \*BSD systems\):
 
-    $ ./configure --prefix=/usr
-    $ gmake
-    $ sudo gmake install
+```
+$ ./configure --prefix=/usr
+$ gmake
+$ sudo gmake install
+```
 
 There is also a simple script to do this automatically:
 
-    $ sys/install.sh
+```
+$ sys/install.sh
+```
 
 ### Static Build
 
 You can build statically radare2 and all the tools with the command:
 
-    $ sys/static.sh
+```
+$ sys/static.sh
+```
 
 ### Docker
 
@@ -32,5 +40,10 @@ This dockerfile is also used by Remnux distribution from SANS, and is available 
 
 ## Cleaning Up Old Radare2 Installations
 
-    ./configure --prefix=/old/r2/prefix/installation
-    make purge
+```
+./configure --prefix=/old/r2/prefix/installation
+make purge
+```
+
+
+
