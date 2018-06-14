@@ -24,7 +24,7 @@ A program to extract information from executable binaries, such as ELF, PE, Java
 
 A command line assembler and disassembler for multiple architectures \(including Intel x86 and x86-64, MIPS, ARM, PowerPC and Java\).
 
-
+一个支持大量架构（包括 Intel x86和x86-64、MIPS、ARM、PowerPC和Java）的命令行汇编和反汇编工具
 
 #### Examples
 
