@@ -6,7 +6,7 @@ radare项目开始于2006年的2月，意在提供一个免费且简单的支持
 
 Since then, the project has evolved to provide a complete framework for analyzing binaries while making use of basic \*NIX concepts. Those concepts include the famous "everything is a file," "small programs that interact using stdin/stdout," and "keep it simple" paradigms.
 
-从那以后，
+从那以后，这个项目逐渐演进成为一个完整的二进制文件分析框架同时采用了\*NIX下的哲学，包括著名的“万物皆文件”，“编写小的程序用标准输入/标准输出交互”和"保持简洁"的思想。
 
 It is mostly a single-person project. However, ideas and source code contributions are greatly appreciated.
 
