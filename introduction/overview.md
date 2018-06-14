@@ -26,7 +26,7 @@ A command line assembler and disassembler for multiple architectures \(including
 
 一个支持大量架构（包括 Intel x86和x86-64、MIPS、ARM、PowerPC和Java）的命令行汇编和反汇编工具
 
-#### Examples
+#### 例子
 
 ```
 $ rasm2 -a java 'nop'
@@ -47,7 +47,9 @@ $ echo 'push eax;nop;nop' | rasm2 -f -
 An implementation of a block-based hash tool. From small text strings to large disks, rahash2 supports multiple algorithms, including MD4, MD5, CRC16, CRC32, SHA1, SHA256, SHA384, SHA512, par, xor, xorpair, mod255, hamdist, or entropy.  
 rahash2 can be used to check the integrity of, or track changes to, big files, memory dumps, and disks.
 
-### Examples
+一个基于块的哈希工具。小到文本大到磁盘，rahash2 都支持多种算法，包括MD4, MD5, CRC16, CRC32, SHA1, SHA256, SHA384, SHA512, par, xor, xorpair, mod255, hamdist或entropy。rahash2可用于对大文件、内存转储文件和磁盘进行完整性校验和修改追踪。
+
+### 例子
 
 ```
 $ rahash2 file
