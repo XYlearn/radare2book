@@ -48,7 +48,11 @@ $ sys/static.sh
 
 Radare2 repository ships a [Dockerfile](https://github.com/radare/radare2/blob/master/Dockerfile) that you can use with Docker.
 
+Radare2仓库里有一个[Dockerfile](https://legacy.gitbook.com/book/xylearn/radare2book-chinese/edit#)，你可以用Docker运行它。
+
 This dockerfile is also used by Remnux distribution from SANS, and is available on the docker [registryhub](https://registry.hub.docker.com/u/remnux/radare2/).
+
+这个dockerfile也被来自SANS的Remnux发行版使用，并可以从docker [registryhub](https://registry.hub.docker.com/u/remnux/radare2/)获取
 
 ## Cleaning Up Old Radare2 Installations
 
