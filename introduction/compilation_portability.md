@@ -54,7 +54,7 @@ This dockerfile is also used by Remnux distribution from SANS, and is available 
 
 这个dockerfile也被来自SANS的Remnux发行版使用，并可以从docker [registryhub](https://registry.hub.docker.com/u/remnux/radare2/)获取
 
-## 清理已安装的老版本Radare2
+## 清理已安装的Radare2老版本
 
 ```
 ./configure --prefix=/old/r2/prefix/installation
