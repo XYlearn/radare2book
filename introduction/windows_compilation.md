@@ -7,6 +7,8 @@
 The most native way to compile radare2 under Windows is to use meson + msvc. First you need **python3** to be installed on your computer. Once this is done, you can install the meson build system using `pip3 install meson` \(with Administrator privileges\).  
 Now navigate to your Python installation folder, and copy the `meson.py` from `.\Scripts` subfolder into your radare2 folder.
 
+最本地化的在Windows下编译radare2的方法是使用meson + msvc。首先你需要在电脑上安装**python3**。完成后，你可以通过`pip3 install meson`安装meson构建系统（使用管理员权限）。然后前往你的Python安装路径，并从`.\Scripts`子目录将`meson.py`拷贝到你的radare2目录下。
+
 Meson also requires Ninja. You can download it from [here](https://ninja-build.org/). Copy `ninja.exe` binary into your radare2 folder. Then run `meson.bat` and wait until compilation is done.
 
 #### Compiling
