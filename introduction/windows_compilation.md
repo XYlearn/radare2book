@@ -2,7 +2,7 @@
 
 ### Meson \(MSVC\)
 
-**WARNING: This build is not being tested for the moment. Note that it does not compile every plugins available in radare2 yet. Refer to the **[**Mingw32**](#mingw32)** build below for a more stable and complete build.**
+**警告: 这种构建方式暂时没有被测试过。注意它并没有编译所有radare2目前可获得的插件。按照以下的 **[**Mingw32**](https://legacy.gitbook.com/book/xylearn/radare2book-chinese/edit#) **构建以更加稳定完整地进行构建**
 
 The most native way to compile radare2 under Windows is to use meson + msvc. First you need **python3** to be installed on your computer. Once this is done, you can install the meson build system using `pip3 install meson` \(with Administrator privileges\).  
 Now navigate to your Python installation folder, and copy the `meson.py` from `.\Scripts` subfolder into your radare2 folder.
@@ -118,6 +118,7 @@ Please, be sure to build radare2 from the same environment you're going to use r
   pacman -S git make zip gcc patch
   ```
 * Compile the radare2:
+
   ```sh
   ./configure --with-ostype=windows ; make ; make w32dist
   ```
