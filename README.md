@@ -31,7 +31,7 @@ Contributors:
 * TDKPS
 * Thanat0s
 
-### The original radare book
+### 原版radare book
 
 Original author and greetings from [The radare book](http://www.radare.org/get/radare.pdf) : pancake
 

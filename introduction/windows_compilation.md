@@ -11,11 +11,17 @@ Now navigate to your Python installation folder, and copy the `meson.py` from `.
 
 Meson also requires Ninja. You can download it from [here](https://ninja-build.org/). Copy `ninja.exe` binary into your radare2 folder. Then run `meson.bat` and wait until compilation is done.
 
-#### Compiling
+Meson也需要Ninja的支持。你可以从[这里](https://ninja-build.org)下载它。将`ninja.exe`文件拷贝到你的radare2目录下。并且运行`meson.bat`并等待编译完成。
+
+#### 编译
 
 * At first you will need to run `vsvarsall.bat` from the corresponding directory of your Visual Studio or Visual C++ Build Tools.  
   In case of VS2015 it is located usually in `C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\` or  
   in `C:\\Program Files (x86)\\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat`
+
+* 一开始你需要从Visual Studio或VisualC++构建工具目录下运行`vsvarsall.bat。`  
+  在VS2015的环境下，目录通常为`C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\` 或者是  
+   `C:\\Program Files (x86)\\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat`
 
 * Using **Ninja build system**: This is the easiest, simply run `meson.bat` and wait until the compilation is complete.
 
