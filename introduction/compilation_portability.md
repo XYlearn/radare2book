@@ -1,4 +1,4 @@
-## 编译和移植
+## 清理老版本清理编译和移植
 
 Currently the core of radare2 can be compiled on many systems and architectures, but the main development is done on GNU/Linux with GCC, and on MacOS X with clang. Radare is also known to compile on many different systems and architectures \(including TCC and SunStudio\).
 
@@ -54,7 +54,7 @@ This dockerfile is also used by Remnux distribution from SANS, and is available 
 
 这个dockerfile也被来自SANS的Remnux发行版使用，并可以从docker [registryhub](https://registry.hub.docker.com/u/remnux/radare2/)获取
 
-## Cleaning Up Old Radare2 Installations
+## 清理已安装的老版本Radare2
 
 ```
 ./configure --prefix=/old/r2/prefix/installation
