@@ -6,11 +6,19 @@ Currently the core of radare2 can be compiled on many systems and architectures,
 
 People often want to use radare as a debugger for reverse engineering. Currently, the debugger layer can be used on Windows, GNU/Linux \(Intel x86 and x86\_64, MIPS, and ARM\), FreeBSD, NetBSD, and OpenBSD \(Intel x86 and x86\_64\). There are plans to support Solaris and MacOS X.
 
+人们通常想用radare作为逆向工程的调试器。目前，调试层可以在Windows, GNU/Linux\(Intel x86 and x86\_64, MIPS 和 ARM\), FreeBSD, NetBSD 和 OpenBSD \(Intel x86 and x86\_64\)下使用。我们有支持Solaris和MacOS X的打算。
+
 Compared to core, the debugger feature is more restrictive portability-wise. If the debugger has not been ported to your favorite platform, you can disable the debugger layer with the --without-debugger `configure` script option when compiling radare2.
+
+与核心相比，调试器的特性在移植上有更多限制。如果调试器没有被一直到你喜爱的平台，你可以通过--without-debugger这个\`configure\` 参数关闭调试器。
 
 Note that there are I/O plugins that use GDB, GDB Remote, or Wine as back-ends, and therefore rely on presence of corresponding third-party tools.
 
+注意有I/O插件使用了GDB，GDB Remote或者Wine作为后台，并因此依赖对应的第三方工具
+
 To build on a system using ACR/GMAKE \(e.g. on \*BSD systems\):
+
+在一些系统上\(例如在\*BSD系统上\)用以下命令构建：
 
 ```
 $ ./configure --prefix=/usr
@@ -20,13 +28,17 @@ $ sudo gmake install
 
 There is also a simple script to do this automatically:
 
+也有一个简单的脚本可以自动完成：
+
 ```
 $ sys/install.sh
 ```
 
-### Static Build
+### 静态构建
 
 You can build statically radare2 and all the tools with the command:
+
+你可以用如下命令静态地构建radare2和所有的工具：
 
 ```
 $ sys/static.sh
