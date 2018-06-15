@@ -1,6 +1,6 @@
-## Command-line Options
+## 命令行选项
 
-The radare core accepts many flags from command line.
+radare core提供了非常多命令行选项
 
 An excerpt from usage help message:
 
