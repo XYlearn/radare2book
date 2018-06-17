@@ -1,16 +1,16 @@
-## Contributing
+## 贡献
 
 ### Radare2 Book
 
-If you want to contribute to the Radare2 book, you can do it at the [Github repository](https://github.com/radare/radare2book). Suggested contributions include:
+如果你想，你可以在[Github repository](https://github.com/radare/radare2book)为Radare2 book做出贡献。建议的贡献包括：
 
 * Crackme writeups
 * CTF writeups
-* Documentation on how to use Radare2
-* Documentation on developing for Radare2
-* Conference presentations/workshops using Radare2
-* Missing content from the Radare1 book updated to Radare2
+* 如何使用Radare2的文档
+* 如何开发Radare2的文档
+* 使用Radare2的会议展示或研讨会
+* Radare1 book中未被更新到Radare2的内容
 
-Please get permission to port any content you do not own/did not create before you put it in the Radare2 book.
+请在获许后再将不是你拥有、原创的内容添加到Radare2 book。
 
-See <https://github.com/radare/radare2/blob/master/DEVELOPERS.md> for tips contributing to radare2.
+参考 <https://github.com/radare/radare2/blob/master/DEVELOPERS.md> 获得向radare2贡献的条例。
