@@ -1,6 +1,7 @@
 ## Rax2
 
 The `rax2` utility comes with the radare framework and aims to be a minimalistic expression evaluator for the shell. It is useful for making base conversions between floating point values, hexadecimal representations, hexpair strings to ascii, octal to integer. It supports endianness and can be used as a shell if no arguments are given.
+`rax2`是radare框架自带的一个工具，旨在成为一个最小化的shell表达式计算器。它在转化浮点数，十六进制表示，十六进制串转ascii字符串，八进制转十进制上很有用。它支持（不同）端序；在没有参数情况下可以像shell一样交互。
 
     $ rax2 -h
 
@@ -44,7 +45,7 @@ The `rax2` utility comes with the radare framework and aims to be a minimalistic
     -v    version           ;  rax2 -v
     
 
-Some examples:
+一些例子:
 
     $ rax2 3+0x80
     0x83
