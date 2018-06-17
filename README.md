@@ -66,3 +66,4 @@ Original author and greetings from [The radare book](http://www.radare.org/get/r
 ## 翻译进度
 
 * 2018-06-17 Introduction翻译完成
+* 2018-06-18 Configuration翻译完成

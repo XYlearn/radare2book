@@ -1,56 +1,55 @@
-## Common Configuration Variables
+## 常用配置变量
 
-Below is a list of the most frequently used configuration variables. You can get a complete list by issuing `e` command without arguments. For example, to see all variables defined in the "cfg" namespace, issue `e cfg.` (mind the ending dot). You can get help on any eval configuration variable by using `e? cfg.`
+下面是一系列最常用的配置变量。你可以通过不带参数的`e`获取一个完整的列表。例如，查看所有在cfg名字空间中的变量，输入`e cfg.`（注意最后的点）。你可以使用`e? cfg.`以获得任何其中参数变量的帮助。
 
     asm.arch
-Defines target CPU architecture used for disassembling (`pd`, `pD` commands) and code analysis (`a` command). You can find the list of possible value by looking at the result of `e asm.arch=?` or `rasm2 -L`.
-It is quite simple to add new architectures for disassembling and analyzing code. There is an interface for that. For x86, it is used to attach a number of third-party disassembler engines, including GNU binutils, Udis86 and a few of handmade ones.
+定义了目标CPU架构，以供反汇编（`pd`，`pD`命令）和代码分析（`a`命令）使用。你可以用`e asm.arch=?`或`rasm -L`获取所有的可能取值。添加新的可供反汇编和代码分析使用的架构非常简单。有一个为此提供的接口。x86架构被附加到大量的第三方反汇编引擎中，包括GNU binutils，Udis86和一些手工制作的工具。
 
     asm.bits
-Determines width in bits of registers for current architecture. Supported values: 8, 16, 32, 64. Note that not all target architectures support all combinations for asm.bits.
+确定当前架构的寄存器位宽。支持的值有：8, 16, 32, 64。注意不是所有的目标架构都支持所有asm.bits的所有取值。
 
     asm.syntax
-Changes syntax flavor for disassembler between Intel and AT&T. At the moment, this setting affects Udis86 disassembler for Intel 32/Intel 64 targets only. Supported values are `intel` and `att`.
+在Intel和AT&T间切换反汇编器的反汇编风格。目前，这个设置只对Udis86反汇编器的Intel 32/Intel 64目标架构起作用。这个配置支持的值为`intel`和`att`。
 
     asm.pseudo
-A boolean value to choose a string disassembly engine. "False" indicates a native one, defined by current architecture, "true" activates a pseudocode strings format; for example, it will show `eax=ebx` instead of a `mov eax, ebx`.
+一个用于选择字符串反汇编引擎的布尔值。"False"表示使用本地反汇编引擎，由当前架构确定；"True"激活伪代码字符串格式。例如，设置后将显示`eax=ebx`而不是`mov eax, ebx`。
 
     asm.os
-Selects a target operating system of currently loaded binary. Usually OS is automatically detected by `rabin -rI`. Yet, `asm.os` can be used to switch to a different syscall table employed by another OS.
+为当前加载的库选择一个目标操作系统。虽然通常`rabin -rI`会自动检测系统，但是`asm.os`可以用来切换到另一个操作系统的系统调用表。
 
     asm.flags
-If defined to "true", disassembler view will have flags column.
+如果被设置为"true"，反汇编器视图会有标志(flags)列。
 
     asm.lines.call
-If set to "true", draw lines at the left of disassemble output (`pd`, `pD` commands) to graphically represent control flow changes (jumps and calls) that are targeted inside current block. Also, see `asm.linesout`.
+如果被设置为"true"，会在反编译(`pd`，`pD`命令)左侧打印行号来图形化表示当前块内的控制流改变（跳转和函数调用）。你也可以看看`asm.linesout`
 
     asm.linesout
-When defined as "true", the disassembly view will also draw control flow lines that go ouside of the block.
+当被置为"true"时，反汇编界面也会画出跳出块外的控制流。  
 
     asm.linestyle
-A boolean value which changes the direction of control flow analysis. If set to "false", it is done from top to bottom of a block; otherwise, it goes from bottom to top. The "false" setting seems to be a better choice for improved readability, and is the default one.
+一个改变控制流分析方向的布尔值。如果被设置为"false"，控制流分析从块的顶部执行到底部；否则从底部执行到顶部。"false"设置似乎是提高可读性的更好选择，也是默认的选项。
 
     asm.offset
-Boolean value which controls visibility of offsets for individual disassembled instructions.
+控制是否显示反汇编指令偏移位置的布尔值。
 
     asm.trace
-A boolean value that controls displaying of tracing information (sequence number and counter) at the left of each opcode. It is used to assist programs trace analysis.
+控制是否在每一个opcde左侧显示追踪(tracing)信息（序列编号和计数器）的布尔值。用于辅助程序的追踪分析(trace analysis)。
 
     asm.bytes
-A boolean value used to show or hide displaying of raw bytes of instructions.
+一个用来显示或隐藏指令原始字节的布尔值。
 
     cfg.bigendian
-Change endianness. "true" means big-endian, "false" is for little-endian.
-"file.id" and "file.flag" both to be true.
+改变端序。"true"表示大端，"false"表示小端。
+"file.id"和"file.flag"都应该为"true"。
 
     cfg.newtab
-If this variable is enabled, help messages will be displayed along with command names in tab completion for commands.
+如果这个变量被启用了，帮助信息会与命令名一起在命令补全时显示。
 
     scr.color
-This boolean variable enables or disables colorized screen output.
+这个布尔值开启或关闭屏幕的颜色输出。
 
     scr.seek
-This variable accepts an expression, a pointer (eg. eip), etc. If set, radare will set seek position to its value on startup.
+这个变量接受一个表达式，一个指针（例如eip）等。如果被设置为真，radare会在开始时转移(seek)到它的值的位置。
 
     cfg.fortunes
-Enables or disables "fortune" messages displayed at each radare start.
+开启或禁用在每次radare启动时显示的"fortune"信息。
