@@ -1,88 +1,84 @@
-## Seeking
+## 寻址(Seeking)
 
-The current seek position is changed with `s` command. It accepts a math expression as argument. The expression can be composed of shift operations, basic math operations, or memory access operations.
-
+当前寻址(seek)位置可以使用`s`命令修改。这条命令接受一个数学表达式参数。表达式可以由移位操作，基本数学运算或访问内存操作组成。
 
     [0x00000000]> s?
     Usage: s[+-] [addr]
-    s                 print current address
-    s 0x320           seek to this address
-    s-                undo seek
-    s+                redo seek
-    s*                list undo seek history
-    s++               seek blocksize bytes forward
-    s--               seek blocksize bytes backward
-    s+ 512            seek 512 bytes forward
-    s- 512            seek 512 bytes backward
-    sg/sG             seek begin (sg) or end (sG) of section or file
-    s.hexoff          Seek honoring a base from core->offset
-    sa [[+-]a] [asz]  seek asz (or bsize) aligned to addr
-    sn/sp             seek next/prev scr.nkey
-    s/ DATA           search for next occurrence of 'DATA'
-    s/x 9091          search for next occurrence of \x90\x91
-    sb                seek aligned to bb start
-    so [num]          seek to N next opcode(s)
-    sf                seek to next function (f->addr+f->size)
-    sC str            seek to comment matching given string
-    sr pc             seek to register
+    s                 打印当前地址
+    s 0x320           寻址到这个地址
+    s-                撤销寻址操作
+    s+                重做寻址操作
+    s*                列举撤销寻址的历史
+    s++               向前寻址块大小字节数
+    s--               向后寻址块大小字节数
+    s+ 512            向前寻址512字节
+    s- 512            向后寻址512字节
+    sg/sG             寻址到文件头和节头(sg)或文件尾和节尾(sG)
+    s.hexoff          Seek honoring a base from core->offset(译者注：没懂)
+    sa [[+-]a] [asz]  寻址到a与asz对其后的地址
+    sn/sp             寻址到下一个/前一个 scr.nkey
+    s/ DATA           搜索下一次出现DATA的位置
+    s/x 9091          搜索下一个出现 \x90\x91的位置
+    sb                寻址到与块起始位置对其的位置
+    so [num]          寻址到往下数第N个opcode
+    sf                寻址到下一个函数(f->addr+f->size)
+    sC str            寻址到符合给定字符串的注释处
+    sr pc             寻址到寄存器
 
-    > 3s++        ; 3 times block-seeking
-    > s 10+0x80   ; seek at 0x80+10
+    > 3s++        ; 三次块寻址
+    > s 10+0x80   ; 寻址到0x80+10
 
-
-If you want to inspect the result of a math expression, you can evaluate it using the `?` command. Simply pass the expression as an argument. The result can be displayed in hexadecimal, decimal, octal or binary formats.
+如果你想查看一个数学表达式的结果，你可以使用`?`指令执行它。只要将表达式作为参数传入即可。结果会以十六进制，十进制，八进制或二进制格式输出。
 
     > ? 0x100+200
     0x1C8 ; 456d ; 710o ; 1100 1000  
 
+在可是模式下你可以在当前寻址位置按`u`(撤销undo)或`U`(重做redo)返回到寻址历史中前一个或后一个位置。
 
-In the visual mode you can press `u` (undo) or `U` (redo) inside the seek history to return back to previous or forward to the next location.
+## 打开文件
 
-## Open file
-
-As test file let's use a simple hello_world.c compiled in Linux ELF format.
-After we compile it let's open it with radare2:
+让我们使用一个简单的以Linux ELF格式编译的hello_world.c作为测试文件。
+我们在编译后使用radare2打开它：
 
     r2 hello_world
 
-Now we have the command prompt:
+现在我们进入了命令行提示符：
 
     [0x00400410]>
 
-Now we are ready to go deeper.
+接下来我们更进一步。
 
-## Seeking at any position
+## 寻址到任意位置
 
-All seeking commands that have address in command parameters can use any base
-such as hex/octal/binary or decimal.
+寻址指令的地址参数可以使用任何进制，如十六进制/八进制/二进制或十进制。
 
-Seek to address 0x0, alternative command is just `0x0`
+寻址到地址0x0，可以用`0x0`来替代这条指令
 
     [0x00400410]> s 0x0
     [0x00000000]>
 
-Print current address
+打印当前地址
 
     [0x00000000]> s
     0x0
     [0x00000000]>
 
-there is an alternate way to print current position: `?v $$`.
+用另一种方式打印当前位置：`?v $$`。
 
-Seek N positions forward, space is optional
+向前移动N个位置，空格是可选的：
 
     [0x00000000]> s+ 128
     [0x00000080]>
 
-Undo last two seeks to return to the initial address
+撤销前两次寻址已返回到初始地址
 
     [0x00000080]> s-
     [0x00000000]> s-
     [0x00400410]>
 
-we are back at _0x00400410_.
+我们回到了_0x00400410_。
 
-There's also a command for showing the seek history:
+也有一条显示寻址(seek)历史的指令
 
     [0x00400410]> s*
     f undo_3 @ 0x400410
