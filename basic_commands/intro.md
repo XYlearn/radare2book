@@ -1,59 +1,52 @@
-# Basic Commands
+# 基本指令
 
-Most command names in radare are derived from action names. They should be easy to remember, as they are short. Actually, all commands are single letters. Subcommands or related commands are specified using the second character of command name. For example, `/ foo` is a command to search plain string, while `/x 90 90` is used to look for hexadecimal pairs.
+大多数radare中的指令名称来源与动作的名字。由于他们很短，因此应该容易记忆。事实上，所有命令都是单个英文字母。相关的子命令使用命令的第二个字母。例如，`/ foo`是用于搜索纯字符串的指令，但是`/x 90 90`用于搜索十六进制字符串。
 
- The general format for a valid command \(as explained in the 'Command Format' chapter\) looks like this:
+通常有效的指令（在"指令格式"一章中解释过）格式类似这样：
 
-```
-[.][times][cmd][~grep][@[@iter]addr!size][|>pipe] ; ...
-```
+    [.][times][cmd][~grep][@[@iter]addr!size][|>pipe] ; ...
 
-For example,
+例如，
 
-> 3s +1024    ; seeks three times 1024 from the current seek
+    > 3s +1024    ; 从当前位置向后移动1024三次
 
-If a command starts with `=!`, the rest of the string is passed to currently loaded IO plugin \(a debugger, for example\). Most plugins provide help messages with `=!?` or `=!help`.
+如果一条指令以`=!`开头，指令的剩余部分被传给当前加载的IO插件（比如说调试器）。大多数插件提供了帮助信息，用`=!?`或`=!help`查看
 
-```
-$ r2 -d /bin/ls
-> =!help      ; handled by the IO plugin
-```
+    $ r2 -d /bin/ls
+    > =!help      ; 由IO插件处理
 
-If a commands starts with `!`, posix\_system\(\) is called to pass the command to your shell. Check `!?` for more options and usage examples.
+如果一条指令以`!`开始，posix_system()函数会被调用，将你的指令传递给shell。查看`!?`的信息来获取更多选项和例子。
 
-> !ls         ; run `ls` in the shell
+    > !ls         ; 在shell运行ls
 
-The meaning of arguments \(iter, addr, size\) depends on the specific command. As a rule of thumb, most commands take a number as an argument to specify number of bytes to work with, instead of currently defined block size. Some commands accept math expressions, or strings.
+参数(迭代, 地址, 大小)的含义随特定指令变化。根据经验，大多数指令接受一个参数来指定要操作的字节数，以代替当前的块字节数。一些指令接受数学表达式或字符串。
 
-> px 0x17     ; show 0x17 bytes in hexs at current seek  
-> s base+0x33 ; seeks to flag 'base' plus 0x33  
-> / lib       ; search for 'lib' string.  
-> The `@` sign is used to specify a temporary offset location or seek position at which the command is executed, instead of current seek position. This is quite useful as you don't have to seek around all the time.
->
-> p8 10 @ 0x4010  ; show 10 bytes at offset 0x4010  
-> f patata @ 0x10 ; set 'patata' flag at offset 0x10  
-> Using `@@` you can execute a single command on a list of flags matching the glob. You can think of this as a foreach operation:
->
-> s 0  
-> / lib             ; search 'lib' string  
-> p8 20 @@ hit0\_\*   ; show 20 hexpairs at each search hit
+    > px 0x17     ; 以十六进制格式显示当前位置的0x17个字节
+    > s base+0x33 ; 寻址到标志'flag'加上0x33的位置
+    > / lib       ; 搜索字符串"lib"
 
-The `>` operation is used to redirect output of a command into a file \(overwriting it if it already exists\).
+`@`字符被用来指定一个临时的偏移位置，指令会在这个位置而不是当前位置被执行。当你不想一直到处跳转时，这很有用。
 
-> pr &gt; dump.bin   ; dump 'raw' bytes of current block to file named 'dump.bin'  
-> f  &gt; flags.txt  ; dump flag list to 'flags.txt'
+    > p8 10 @ 0x4010  ; 在0x4010显示10字节
+    > f patata @ 0x10 ; 在地址为0x10处设置"patata"标志
 
-The `|` operation \(pipe\) is similar to what you are used to expect from it in a \*NIX shell: an output of one command as input to another.
+你可以使用`@@`来在一系列匹配的标志上执行一条命令。你可以把它当成foreach操作：
 
-```
-[0x4A13B8C0]> f | grep section | grep text
-0x0805f3b0 512 section._text
-0x080d24b0 512 section._text_end
-```
+    > s 0
+    > / lib             ; 搜索"lib"字符串
+    > p8 20 @@ hit0_*   ; 在每一次命中的搜索处打印20个十六进制字符串
 
-You can pass several commands in a single line by separating them with semicolon `;`:
+`>`操作泳衣重定向指令输出到未见(如果文件存在则覆盖内容)。
 
-> px ; dr
+    > pr > dump.bin   ; 获取当前块的原始字节保存到名为"dump.bin"的文件中
+    > f  > flags.txt  ; 将标志位列表保存到"flag.txt"中
 
+`|`操作(管道)类似于你在\*NIX命令行中使用到的类似：将一条指令的输出作为另一条指令的输入。
 
+    [0x4A13B8C0]> f | grep section | grep text
+    0x0805f3b0 512 section._text
+    0x080d24b0 512 section._text_end
 
+你可以在一行中输入多条指令，用`;`分开：
+
+    > px ; dr
